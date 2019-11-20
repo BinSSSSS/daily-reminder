@@ -21,14 +21,14 @@ spring:
       job-store:
         driver-class-name: com.mysql.cj.jdbc.Driver
         url: jdbc:mysql://localhost:3306/job_store?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
-        username: bins
-        password: binss
+        username: root
+        password: root
       reminder:
          driver-class-name: com.mysql.cj.jdbc.Driver
          #需要注意的就是： serverTimezone需要设置为中国的时区
          url: jdbc:mysql://localhost:3306/reminder?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
-         username: bins
-         password: binss
+         username: root
+         password: root
   # jpa 配置
   jpa:
     hibernate:
@@ -57,9 +57,9 @@ spring:
     host: smtp.qq.com
     port: 465
     #配置邮件发送方
-    username: 1395926989@qq.com
+    username: ***
     #配置邮件发送方密码。 使用的是IMAP/SMTP
-    password: wqmbhzvaurccigag
+    password: ****
     properties:
       mail:
         smtp:
