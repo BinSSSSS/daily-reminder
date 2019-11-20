@@ -1,0 +1,56 @@
+.top-padding {
+	margin-top: 50px;
+}
+
+.left {
+	float: left;
+}
+
+.form-group label {
+	line-height: 34px;
+	text-align: right;
+}
+
+.form-group textarea {
+	height: 250px;
+	width: 550px !important;
+	font-family: Consolas, 楷体;
+	font-size: 14px;
+}
+
+#reminder-submit {
+	margin-top: 30px;
+	height: 50px;
+	/*background-color: #218838;*/
+	/*border-color: #218838;*/
+}
+
+body {
+	background-image: url('/images/142977334160.jpg');
+}
+
+.jumbotron {
+	background: transparent;
+}
+
+label, h1 {
+	color: black !important;
+}
+
+h1 {
+	font-size: 45px !important;
+}
+
+#datetimepicker .help-block {
+	display: table-row;
+}
+
+@media screen and (min-width: 768px){
+	.modal-dialog {
+   	 width: 300px !important;
+   	 margin: 30px auto;
+	}
+}
+.hidden{
+	display: none;
+}

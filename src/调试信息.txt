@@ -1,0 +1,50 @@
+com.atomikos.icatch.jta.UserTransactionManager@550fa96f
+com.atomikos.icatch.jta.UserTransactionManager@3a16984c
+
+
+org.springframework.transaction.jta.JtaTransactionManager@b8c6406
+
+org.springframework.transaction.jta.JtaTransactionManager@50b4364
+
+
+
+hibernate.transaction.jta.platform=org.springframework.boot.orm.jpa.hibernate.SpringJtaPlatform@21f9ea0b,
+ hibernate.id.new_generator_mappings=true, 
+ hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy,
+ hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@7c305449,
+ hibernate.transaction.jpa.platform=org.springframework.boot.orm.jpa.hibernate.SpringJtaPlatform,
+ hibernate.dialect=org.hibernate.dialect.MySQL5Dialect,
+ hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy 
+ 
+ 
+ hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy,
+ hibernate.id.new_generator_mappings=true, 
+ hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy,
+ hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD, 
+ hibernate.transaction.jpa.platform=, 
+ hibernate.dialect=org.hibernate.dialect.MySQL5Dialect
+ 
+ 
+ 
+ hibernate.transaction.jta.platform=org.springframework.boot.orm.jpa.hibernate.SpringJtaPlatform@2dfc293e, 
+ hibernate.id.new_generator_mappings=true, 
+ hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy,
+ hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_HOLD,
+ hibernate.transaction.jpa.platform=org.springframework.boot.orm.jpa.hibernate.SpringJtaPlatform,
+ hibernate.dialect=org.hibernate.dialect.MySQL5Dialect,
+ hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy}
+ 
+ 
+ hibernate.transaction.jta.platform=org.springframework.boot.orm.jpa.hibernate.SpringJtaPlatform@73113a7e, 
+ hibernate.id.new_generator_mappings=true, 
+ hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy,
+ hibernate.resource.beans.container=org.springframework.orm.hibernate5.SpringBeanContainer@6cf99fd1,
+ hibernate.connection.handling_mode=DELAYED_ACQUISITION_AND_RELEASE_AFTER_TRANSACTION,
+ hibernate.transaction.jpa.platform=org.springframework.boot.orm.jpa.hibernate.SpringJtaPlatform,
+ hibernate.dialect=org.hibernate.dialect.MySQL5Dialect, 
+ hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy}
+ 
+ 
+ 
+ org.hibernate.boot.registry.internal.StandardServiceRegistryImpl@5996d6f2
+ org.hibernate.engine.transaction.jta.platform.internal.TransactionManagerBasedSynchronizationStrategy@6e97a995

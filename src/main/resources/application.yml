@@ -1,0 +1,134 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  application:
+    name: daily-reminder
+  #数据库相关
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #需要注意的就是： serverTimezone需要设置为中国的时区
+#    url: jdbc:mysql://localhost:3306/reminder?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
+#    username: bins
+#    password: binss
+    #阿里 druid 数据连接池配置  
+    druid:
+      initial-size: 10
+      max-active: 100
+      min-idle: 10
+      max-wait: 60000
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      job-store:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/job_store?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
+        username: bins
+        password: binss
+      reminder:
+         driver-class-name: com.mysql.cj.jdbc.Driver
+         #需要注意的就是： serverTimezone需要设置为中国的时区
+         url: jdbc:mysql://localhost:3306/reminder?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8
+         username: bins
+         password: binss
+  # jpa 配置
+  jpa:
+    hibernate:
+      ddl-auto: none
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy      
+    show-sql: false
+    open-in-view: true
+    database: mysql    
+    properties:
+      hibernate:
+        transaction:
+          jpa:
+            platform: org.springframework.boot.orm.jpa.hibernate.SpringJtaPlatform
+          
+#  jta:
+#    atomikos:
+#      datasource:
+#        max-pool-size: 20
+#        borrow-connection-timeout: 60
+#      connectionfactory:
+#        max-pool-size: 20
+#        borrow-connection-timeout: 60
+  #邮箱的配置相关
+  mail:
+    host: smtp.qq.com
+    port: 465
+    #配置邮件发送方
+    username: 1395926989@qq.com
+    #配置邮件发送方密码。 使用的是IMAP/SMTP
+    password: wqmbhzvaurccigag
+    properties:
+      mail:
+        smtp:
+          #是否需要权限验证
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          #配置SSLSocketFactory使用 465端口的SMPT
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+  quartz:
+    auto-startup: true
+    jdbc:
+      initialize-schema: never
+      schema: classpath:tables_mysql.sql
+    job-store-type: jdbc
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: wrScheduler
+            instanceId: auto
+          # Configure JobStore 作业存储配置  
+          jobStore:
+            class: org.quartz.impl.jdbcjobstore.JobStoreCMT #持久化配置
+            driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+            tablePrefix: QRTZ_  #数据库中quartz表的表名前缀
+            isClustered: true  #是否使用集群
+            misfireThreshold: 5000
+          # 调度器线程池配置  
+          threadPool:
+            class: org.quartz.simpl.SimpleThreadPool
+            threadCount: 20   # 指定多少个工作者线程被创建用来处理 Job
+            threadPriority: 5 # 设置工作者线程的优先级（最大值10，最小值1，常用值5）         
+  #文件上传配置
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 100MB
+      file-size-threshold: 1MB
+      location: reminder/files
+                
+server:
+  port: 9999          
+#端点管理            
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include:
+        - '*'
+        
+     
+#日志配置
+logging:
+  path: logs
+  file: dr.log
+  
+#eureka 客户端注册发现
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:9000/eureka
+#  instance:
+#    #服务过期时间配置。超过时间未收到心跳则会将该实例剔除
+#    lease-expiration-duration-in-seconds: 15
+#    #服务刷新时间配置
+#    lease-renewal-interval-in-seconds: 5
+
+#debug: true
