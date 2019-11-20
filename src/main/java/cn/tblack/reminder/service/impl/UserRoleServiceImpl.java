@@ -32,10 +32,11 @@ public class UserRoleServiceImpl implements UserRoleService {
 
 	@Override
 	public boolean grantAdminRole(User user) {
-		
+
 		Role role = roleService.findByRoleName(ROLE_ADMIN);
 		return grantRole(user, role);
 	}
+
 	@Transactional
 	private boolean grantRole(User user, Role role) {
 		UserRoles userRoles = new UserRoles();

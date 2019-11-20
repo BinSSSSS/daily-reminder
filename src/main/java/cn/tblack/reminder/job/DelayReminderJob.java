@@ -7,6 +7,7 @@ import org.quartz.JobExecutionContext;
 import org.quartz.JobExecutionException;
 
 import cn.tblack.reminder.schudler.ReminderScheduler;
+import cn.tblack.reminder.util.SchedulerUtils;
 
 /**
  * @延迟调度任务， 该任务用于在执行的时候创建一个新的调度任务并添加到调度任务中心
@@ -23,7 +24,7 @@ public class DelayReminderJob implements Job,Serializable {
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 
 		//拿到调度任务中心
-		ReminderScheduler reminderScheduler = (ReminderScheduler) context.getMergedJobDataMap().get("reminderScheduler");
+		ReminderScheduler reminderScheduler = SchedulerUtils.getReminderScheduler();
 		
 		//拿到需要添加的调度任务
 		ReminderTask task =  (ReminderTask) context.getMergedJobDataMap().get("task");

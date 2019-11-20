@@ -17,6 +17,7 @@ import cn.tblack.reminder.service.MailSenderService;
 @Transactional
 public class MailSenderServiceImpl implements MailSenderService {
 
+	private static final long serialVersionUID = -3569958728312267298L;
 	@Autowired
 	private MailSenderDao mailSenderDao;
 

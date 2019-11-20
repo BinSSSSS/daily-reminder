@@ -55,7 +55,7 @@ public class ReminderScheduler implements Serializable{
 		Map<String, Serializable> params = new HashMap<String, Serializable>(); // 用于在JobDetail中的DataMap存放的对象
 
 		params.put("task", task);
-		params.put("reminderScheduler", this);
+	//	params.put("reminderScheduler", this);
 
 		return addJob(key, DelayReminderJob.class, delayCron, params);
 	}

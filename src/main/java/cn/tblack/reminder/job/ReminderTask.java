@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.concurrent.Future;
 
 import cn.tblack.reminder.entity.Reminder;
-import cn.tblack.reminder.mail.EmailSender;
 import cn.tblack.reminder.util.EmailSenderUtils;
 /**
  * @具体的执行邮件发送的类。 ReminderJob 中将会调用到该类的执行方法。

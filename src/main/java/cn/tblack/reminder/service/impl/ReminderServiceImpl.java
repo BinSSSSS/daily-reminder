@@ -18,6 +18,8 @@ import cn.tblack.reminder.service.ReminderService;
 @Transactional
 public class ReminderServiceImpl implements ReminderService {
 
+
+	private static final long serialVersionUID = -368689618316149104L;
 	@Autowired
 	private ReminderDao reminderDao;
 

@@ -47,6 +47,7 @@ public class ReminderJob implements Job ,Serializable{
 				else {
 					
 				}
+				System.err.println(SchedulerUtils.getReminderScheduler());
 				return;
 			}
 			

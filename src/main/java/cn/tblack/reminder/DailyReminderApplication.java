@@ -6,6 +6,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+
 @SpringBootApplication
 @EnableScheduling		//开启定时调度任务
 @EnableAsync			//开启异步处理
@@ -13,6 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class DailyReminderApplication {
 
 	public static void main(String[] args) {
+		
 		
 		SpringApplication.run(DailyReminderApplication.class,args);
 	}
